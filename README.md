@@ -1,2 +1,2 @@
 # lab
-Lab Playground
+Playground for different things
