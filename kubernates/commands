@@ -1,0 +1,2 @@
+# Dry run and output yaml
+k run nginx-yaml --image=nginx --dry-run=client -o yaml
