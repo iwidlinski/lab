@@ -1,2 +1,23 @@
 # Dry run and output yaml
-k run nginx-yaml --image=nginx --dry-run=client -o yaml
+kubectl run nginx-yaml --image=nginx --dry-run=client -o yaml
+
+# Execute command on pod ( in this case its )
+kubectl exec httpd -it -- /bin/bash
+
+# destroy pod
+kubectl delete pod httpd
+
+# create deployment with 3 replicas
+kubectl create deploy test --image=httpd --replicas=3
+
+# get deployment status
+kubectl get deployments.apps -o wid
+
+# edit deployment
+kubectl edit deployments.apps test
+
+# generate yaml for deployment
+kubectl create deployment httpd --image httpd --replicas 3 --dry-run=client -o yaml
+
+# get more info about ReplicaSets
+kubectl describe replicasets.apps http
