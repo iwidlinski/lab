@@ -21,3 +21,15 @@ kubectl create deployment httpd --image httpd --replicas 3 --dry-run=client -o y
 
 # get more info about ReplicaSets
 kubectl describe replicasets.apps http
+
+# set port forward source:dest
+kubectl port-forward pods/mealie-799f5c9d55-2jrz5 9000:9000
+
+# change my current context namespace
+kubectl config set-context --current --namespace=default
+
+# get running services
+k get service -o wide
+
+# expose a service
+kubectl expose deployment frontend --port 8080
