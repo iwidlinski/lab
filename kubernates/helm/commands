@@ -1,0 +1,17 @@
+# add helm repo
+helm repo add homarr-labs https://homarr-labs.github.io/charts/
+
+# list all things created by helm
+helm ls -A
+
+# list added helm repos
+helm repo list
+
+# update helm repo
+helm repo update
+
+# install app, in new namespace
+helm install homarr homarr-labs/homarr --namespace homarr --create-namespace
+
+# show default values for helm chart
+helm show values homarr-labs/homarr
