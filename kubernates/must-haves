@@ -1,0 +1,20 @@
+# From ASCODE channel https://www.youtube.com/watch?v=8VK9NJ3pObU&t=10s
+
+# dry output variable
+export do=' --dry-run=client -o yaml'
+
+# use the dry output variable
+k run nginx --image=nginx $do
+
+# organize files
+mkcd() { mkdir -p "$@" && cd "$@"; }
+
+# create/destroy faster
+alias kaf='k apply -f '
+alias kdf='k destroy -f '
+
+# namespaces
+export nk='-n kube-system'
+
+# destroy things without waiting
+export now='--grace-period 0 --force'
