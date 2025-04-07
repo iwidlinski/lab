@@ -33,3 +33,6 @@ k get service -o wide
 
 # expose a service
 kubectl expose deployment frontend --port 8080
+
+# scale replica set
+ kubectl --namespace mealie scale deployment mealie --replicas 1
