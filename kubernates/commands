@@ -35,4 +35,8 @@ k get service -o wide
 kubectl expose deployment frontend --port 8080
 
 # scale replica set
- kubectl --namespace mealie scale deployment mealie --replicas 1
+kubectl --namespace mealie scale deployment mealie --replicas 1
+
+kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml
+
+kubectl create service clusterip redis --tcp=6379:6379 --dry-run=client -o yaml
