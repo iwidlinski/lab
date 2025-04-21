@@ -40,3 +40,16 @@ kubectl --namespace mealie scale deployment mealie --replicas 1
 kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml
 
 kubectl create service clusterip redis --tcp=6379:6379 --dry-run=client -o yaml
+
+# Some deployment update/rollback command
+# set image on current deployment
+kubectl set image deployment/my-deployment nginx=nginx:latest
+
+# get status of deployment
+kubectl rollout status deployment/my-deployment 
+# history of deployment
+kubectl rollout history deployment/my-deployment
+
+# rollback deployment
+kubectl rollout undo deployment/my-deployment
+
