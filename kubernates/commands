@@ -53,3 +53,10 @@ kubectl rollout history deployment/my-deployment
 # rollback deployment
 kubectl rollout undo deployment/my-deployment
 
+## ConfigMap command
+kubectl get configmaps
+
+kubectl describe configmaps
+
+# create config map with  two values
+kubectl create configmap my-config --from-literal "MYVAR=myvalue" --from-literal "MYVAR2=myvalue2"

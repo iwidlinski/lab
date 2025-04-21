@@ -1,0 +1,20 @@
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "myapp"
+  namespace: default
+  labels:
+    app: "myapp"
+spec:
+  containers:
+    - name: myapp
+      image: "debian-slim:latest"
+      ports:
+        - containerPort: 80
+          name: http
+      envFrom:
+        - configMapRef:
+            name: myconfig
+---
+
