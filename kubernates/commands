@@ -60,3 +60,9 @@ kubectl describe configmaps
 
 # create config map with  two values
 kubectl create configmap my-config --from-literal "MYVAR=myvalue" --from-literal "MYVAR2=myvalue2"
+
+# create secret
+kubectl create secret generic mysecret --from-literal=DB_PASSWORD=dbpassword
+
+# get actual secret values
+kubectl get secrets mysecret -o yaml
